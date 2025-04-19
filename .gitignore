@@ -1,0 +1,48 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build directories
+/dist
+/build
+
+# .env files for sensitive data
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+*.log.*
+
+# IDEs and Editors
+.vscode/
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# React Native
+*.xcuserstate
+
+# Next.js build directory
+.next/
+
+# TypeScript
+*.tsbuildinfo
+
+# Jest cache
+/coverage/
+jest-test-results.json
+
+# Serverless
+.serverless/
+
+# VSCode settings
+.vscode/
+
+# Other system files
+Thumbs.db
