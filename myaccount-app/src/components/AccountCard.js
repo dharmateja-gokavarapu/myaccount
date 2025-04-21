@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { selectAccount } from '../redux/accountsSlice';
+import { selectState } from '../redux/accountsSlice'; 
 import { useNavigate } from 'react-router-dom';
 
 const AccountCard = ({ account }) => {
@@ -8,8 +8,8 @@ const AccountCard = ({ account }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    // Dispatch action to select the account
-    dispatch(selectAccount(account));
+       // ✅ Use the generic action to set selectedAccount
+       dispatch(selectState({ key: 'selectedAccount', value: account }));
     // Navigate to Account Details Page
     navigate(`/account/${account.id}`);
   };

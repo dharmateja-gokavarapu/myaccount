@@ -1,13 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  accounts: [],
-  selectedAccount: null,
-};
-
 const accountsSlice = createSlice({
   name: 'accounts',
-  initialState,
+  initialState: {
+    accounts: [],
+    selectedAccount: null,
+    // add other selectedX if needed
+  },
   reducers: {
     updateState: (state, action) => {
       const { key, value, mode = 'replace' } = action.payload;
@@ -21,8 +20,14 @@ const accountsSlice = createSlice({
         state[key] = value;
       }
     },
+
+    // ✅ Generic selector for any key like selectedAccount, selectedTrade etc.
+    selectState: (state, action) => {
+      const { key, value } = action.payload;
+      state[key] = value;
+    },
   },
 });
 
-export const { updateState } = accountsSlice.actions;
+export const { updateState, selectState } = accountsSlice.actions;
 export default accountsSlice.reducer;
