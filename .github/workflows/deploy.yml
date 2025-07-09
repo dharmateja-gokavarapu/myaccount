@@ -1,6 +1,6 @@
 name: Deploy React App to GitHub Pages
 
-#deploying react app by using git actions
+#deploying react app by using git actions 
 
 on:
   push:
